@@ -352,6 +352,28 @@
 		});
 	}; // end ssMoveTo
 
+	/* sticky header on scroll
+	 * ------------------------------------------------------ */
+	const ssStickyHeader = function () {
+		const header = document.querySelector(".s-header");
+		if (!header) return;
+
+		let lastScrollTop = 0;
+
+		window.addEventListener("scroll", function () {
+			const scrollTop =
+				window.pageYOffset || document.documentElement.scrollTop;
+
+			if (scrollTop > 100) {
+				header.classList.add("scrolled");
+			} else {
+				header.classList.remove("scrolled");
+			}
+
+			lastScrollTop = scrollTop;
+		});
+	}; // end ssStickyHeader
+
 	/* Initialize
 	 * ------------------------------------------------------ */
 	(function ssInit() {
@@ -361,5 +383,6 @@
 		ssMailChimpForm();
 		ssAlertBoxes();
 		ssMoveTo();
+		ssStickyHeader();
 	})();
 })(document.documentElement);
