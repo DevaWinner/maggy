@@ -42,6 +42,23 @@
 </header>`;
 	};
 
+	const ctaTemplate = (basePath = "") => `
+<section id="cta" class="s-cta">
+	<div class="row row-x-center text-center">
+		<div class="column xl-8 lg-12">
+			<div class="s-cta__content">
+				<h2 class="text-display-title">
+					Get started with a consultation today.
+				</h2>
+				<p class="lead">
+					Ready to take your business to the next level? I offer personalized consultations to help you develop effective marketing strategies, improve your brand presence, and achieve your goals. Let's work together to create results that matter.
+				</p>
+				<a href="${basePath}contact.html" class="btn btn--primary">Let's Work Together</a>
+			</div>
+		</div>
+	</div>
+</section>`;
+
 	const footerTemplate = (basePath = "") => `
 <footer class="s-footer">
     <div class="row s-footer__content">
@@ -112,7 +129,7 @@
 	const getBasePath = () => {
 		const path = window.location.pathname;
 		// Count directory depth by splitting on / and removing empty strings
-		const parts = path.split('/').filter(part => part !== '');
+		const parts = path.split("/").filter((part) => part !== "");
 		// Remove the filename (last part)
 		const dirDepth = parts.length - 1;
 		return dirDepth > 0 ? "../" : "";
@@ -123,9 +140,11 @@
 		const basePath = getBasePath();
 
 		const headerHTML = headerTemplate(pageKey, basePath);
+		const ctaHTML = ctaTemplate(basePath);
 		const footerHTML = footerTemplate(basePath);
 
 		mountComponent('[data-component="site-header"]', headerHTML);
+		mountComponent('[data-component="site-cta"]', ctaHTML);
 		mountComponent('[data-component="site-footer"]', footerHTML);
 	};
 
