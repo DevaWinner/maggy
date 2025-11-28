@@ -3173,7 +3173,7 @@ td:last-child {
  * ------------------------------------------------------------------- */
 .s-header {
 	--header-height: 80px;
-	--logo-width: 9.6rem;
+	--logo-width: 24rem;
 	--box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02), 0 2px 2px rgba(0, 0, 0, 0.02),
 		0 4px 4px rgba(0, 0, 0, 0.02), 0 8px 8px rgba(0, 0, 0, 0.02);
 	--box-shadow-2: 0 2px 2px rgba(0, 0, 0, 0.03), 0 4px 4px rgba(0, 0, 0, 0.03),
@@ -3350,7 +3350,7 @@ td:last-child {
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 900px) {
 	.s-header {
-		--logo-width: 10rem;
+		--logo-width: 32rem;
 		top: var(--vspace-0_25);
 	}
 

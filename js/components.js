@@ -3,47 +3,46 @@
 
 	const navItems = [
 		{ key: "about", label: "About", href: "about.html" },
-		{ key: "services", label: "Services", href: "services.html" },
 		{ key: "blog", label: "Journal", href: "blog.html" },
 		{ key: "contact", label: "Contact", href: "contact.html" },
 	];
 
-	const headerTemplate = (activeKey) => {
+	const headerTemplate = (activeKey, basePath = "") => {
 		const navLinks = navItems
 			.map((item) => {
 				const isActive = item.key === activeKey;
 				const activeClass = isActive ? ' class="current"' : "";
-				return `<li${activeClass}><a href="${item.href}">${item.label}</a></li>`;
+				return `<li${activeClass}><a href="${basePath}${item.href}">${item.label}</a></li>`;
 			})
 			.join("\n                ");
 
 		return `
 <header class="s-header">
-    <div class="row s-header__inner width-sixteen-col">
-        <div class="s-header__block">
-            <div class="s-header__logo">
-                <a class="logo" href="index.html">
-                    <img src="images/logo.svg" alt="Homepage">
-                </a>
-            </div>
+  <div class="row s-header__inner width-sixteen-col">
+    <div class="s-header__block">
+      <div class="s-header__logo">
+        <a class="logo" href="${basePath}index.html">
+          <img src="${basePath}images/logo.svg" alt="Homepage">
+        </a>
+      </div>
 
-            <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-        </div>
-
-        <nav class="s-header__nav">
-            <ul class="s-header__menu-links">
-                ${navLinks}
-            </ul>
-
-            <div class="s-header__contact">
-                <a href="contact.html" class="btn btn--primary s-header__contact-btn">Let's Work Together</a>
-            </div>
-        </nav>
+      <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
     </div>
+
+    <nav class="s-header__nav">
+      <ul class="s-header__menu-links">
+        ${navLinks}
+      </ul>
+
+      <div class="s-header__contact">
+        <a href="${basePath}contact.html" class="btn btn--primary s-header__contact-btn">Let's Work Together</a>
+      </div>
+    </nav>
+  </div>
 </header>`;
 	};
 
-	const footerTemplate = `
+	const footerTemplate = (basePath = "") => `
 <footer class="s-footer">
     <div class="row s-footer__content">
         <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">
@@ -55,10 +54,10 @@
         <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__site-links">
             <h3>Site Links</h3>
             <ul class="link-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Journal</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="${basePath}index.html">Home</a></li>
+                <li><a href="${basePath}blog.html">Journal</a></li>
+                <li><a href="${basePath}about.html">About</a></li>
+                <li><a href="${basePath}contact.html">Contact</a></li>
             </ul>
         </div>
         
@@ -110,10 +109,24 @@
 		}
 	};
 
+	const getBasePath = () => {
+		const path = window.location.pathname;
+		// Count directory depth by splitting on / and removing empty strings
+		const parts = path.split('/').filter(part => part !== '');
+		// Remove the filename (last part)
+		const dirDepth = parts.length - 1;
+		return dirDepth > 0 ? "../" : "";
+	};
+
 	const initComponents = () => {
 		const pageKey = document.body.dataset.page || "";
-		mountComponent('[data-component="site-header"]', headerTemplate(pageKey));
-		mountComponent('[data-component="site-footer"]', footerTemplate);
+		const basePath = getBasePath();
+
+		const headerHTML = headerTemplate(pageKey, basePath);
+		const footerHTML = footerTemplate(basePath);
+
+		mountComponent('[data-component="site-header"]', headerHTML);
+		mountComponent('[data-component="site-footer"]', footerHTML);
 	};
 
 	initComponents();
