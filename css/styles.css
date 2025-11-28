@@ -4171,9 +4171,9 @@ td:last-child {
 .s-journal {
 	padding-top: var(--vspace-6);
 	padding-bottom: var(--vspace-3);
-	background-color: #181818;
-	color: rgba(255, 255, 255, 0.6);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	background-color: #ffffff;
+	color: rgba(0, 0, 0, 0.7);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .s-journal a {
@@ -4182,16 +4182,16 @@ td:last-child {
 
 .s-journal a:focus,
 .s-journal a:hover {
-	color: var(--color-3-dark);
+	color: var(--color-1-dark);
 }
 
 .s-journal h3 a {
-	color: var(--color-3);
+	color: var(--color-text);
 }
 
 .s-journal h3 a:focus,
 .s-journal h3 a:hover {
-	color: var(--color-3);
+	color: var(--color-1);
 }
 
 .s-journal .section-header {
@@ -4200,7 +4200,7 @@ td:last-child {
 
 .s-journal .text-display-title,
 .s-journal h3 {
-	color: var(--color-3);
+	color: var(--color-text);
 }
 
 .s-journal .text-pretitle,
@@ -4210,7 +4210,7 @@ td:last-child {
 }
 
 .s-journal .blog-card-title a {
-	color: var(--color-3);
+	color: var(--color-text);
 }
 
 .s-journal__content-main {
