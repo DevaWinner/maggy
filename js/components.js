@@ -6,7 +6,7 @@
 		{ key: "blog", label: "Journal", href: "blog.html" },
 		{
 			key: "storytelling",
-			label: "Visual Storytelling",
+			label: "Storytelling",
 			href: "storytelling.html",
 		},
 		{ key: "contact", label: "Contact", href: "contact.html" },
