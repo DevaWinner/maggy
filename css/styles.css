@@ -4298,7 +4298,7 @@ td:last-child {
 
 .story-photo {
 	position: relative;
-	overflow: visible;
+	overflow: hidden;
 	margin: 0;
 	height: min(65rem, 75vh);
 	max-height: min(65rem, 75vh);
@@ -4307,7 +4307,7 @@ td:last-child {
 	align-items: center;
 	z-index: 1;
 	isolation: isolate;
-	padding: 2rem 2rem 6rem 2rem;
+	padding: 4rem 2rem 6rem 2rem;
 }
 
 /* Polaroid-style photo frame */
@@ -4333,13 +4333,15 @@ td:last-child {
 
 .story-photo img {
 	width: auto;
-	max-width: calc(100% - 4rem);
+	max-width: 100%;
 	height: auto;
-	max-height: calc(100% - 8rem);
+	max-height: 100%;
 	object-fit: contain;
 	display: block;
 	transition: transform 0.3s ease;
 	filter: saturate(1.1) contrast(1.05);
+	margin-bottom: 0;
+	margin-top: 2rem;
 }
 
 .story-photo:hover img {
@@ -4379,6 +4381,7 @@ td:last-child {
 	letter-spacing: 0.02em;
 	text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.8);
 	transform: rotate(-1deg);
+	white-space: nowrap;
 }
 
 .storytelling-section:nth-child(even) .story-caption h3 {
@@ -4516,10 +4519,12 @@ td:last-child {
 @media screen and (max-width: 1024px) {
 	.story-item {
 		gap: clamp(2rem, 4vw, 4rem);
+		max-width: min(100rem, 85%);
 	}
 
 	.story-photo {
 		max-height: min(60rem, 70vh);
+		padding: 3rem 3rem 7rem 3rem;
 	}
 
 	.story-photo img {
