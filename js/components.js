@@ -4,6 +4,11 @@
 	const navItems = [
 		{ key: "about", label: "About", href: "about.html" },
 		{ key: "blog", label: "Journal", href: "blog.html" },
+		{
+			key: "storytelling",
+			label: "Visual Storytelling",
+			href: "storytelling.html",
+		},
 		{ key: "contact", label: "Contact", href: "contact.html" },
 	];
 
@@ -74,6 +79,7 @@
                 <li><a href="${basePath}index.html">Home</a></li>
                 <li><a href="${basePath}blog.html">Journal</a></li>
                 <li><a href="${basePath}about.html">About</a></li>
+                <li><a href="${basePath}storytelling.html">Visual Storytelling</a></li>
                 <li><a href="${basePath}contact.html">Contact</a></li>
             </ul>
         </div>
