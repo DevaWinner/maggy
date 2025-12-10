@@ -9,6 +9,11 @@
 			label: "Storytelling",
 			href: "storytelling.html",
 		},
+		{
+			key: "audiovisuals",
+			label: "AudioVisuals",
+			href: "audiovisuals.html",
+		},
 		{ key: "contact", label: "Contact", href: "contact.html" },
 	];
 
@@ -80,6 +85,7 @@
                 <li><a href="${basePath}blog.html">Journal</a></li>
                 <li><a href="${basePath}about.html">About</a></li>
                 <li><a href="${basePath}storytelling.html">Visual Storytelling</a></li>
+                <li><a href="${basePath}audiovisuals.html">AudioVisuals</a></li>
                 <li><a href="${basePath}contact.html">Contact</a></li>
             </ul>
         </div>

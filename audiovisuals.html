@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<!--- basic page needs
+    ================================================== -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>AudioVisuals - Magdalene</title>
+
+		<script>
+			document.documentElement.classList.remove("no-js");
+			document.documentElement.classList.add("js");
+		</script>
+
+		<!-- CSS
+    ================================================== -->
+		<link rel="stylesheet" href="css/vendor.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+
+		<!-- favicons
+    ================================================== -->
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+		<link rel="manifest" href="site.webmanifest" />
+	</head>
+
+	<body id="top" data-page="audiovisuals">
+		<!-- preloader
+    ================================================== -->
+		<div id="preloader">
+			<div id="loader" class="dots-fade">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+
+		<!-- page wrap
+    ================================================== -->
+		<div id="page" class="s-pagewrap">
+			<!-- # site header 
+        ================================================== -->
+			<div data-component="site-header"></div>
+
+			<!-- # site main content
+        ================================================== -->
+			<section id="content" class="s-content">
+				<section class="s-pageheader pageheader">
+					<div class="row">
+						<div class="column xl-12">
+							<h1 class="page-title">
+								<span class="page-title__small-type text-pretitle"
+									>AudioVisuals</span
+								>
+								Sound and Vision
+							</h1>
+						</div>
+					</div>
+				</section>
+				<!-- end pageheader -->
+
+				<section class="s-pagecontent pagecontent">
+					<div class="row pageintro">
+						<div class="column xl-12">
+							<p
+								class="lead"
+								style="text-align: center; max-width: 90rem; margin: 0 auto"
+							>
+								Explore stories told through audio and video. From
+								thought-provoking audiobooks to engaging visual content,
+								discover new perspectives and insights.
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Audiobook Section -->
+				<section class="audiovisuals-section">
+					<div class="row">
+						<div class="column xl-12">
+							<div style="text-align: center; margin-bottom: 4rem">
+								<h2>Audiobook</h2>
+								<p style="font-size: 1.6rem; color: #888; margin-top: 1rem">
+									Listen to insightful stories and ideas
+								</p>
+							</div>
+
+							<div style="text-align: center; margin-bottom: 6rem">
+								<!-- Replace src with your audiobook embed or audio player -->
+								<audio
+									controls
+									style="
+										max-width: 100%;
+										margin: 0 auto;
+										display: block;
+										width: 100%;
+										max-width: 500px;
+									"
+								>
+									<source src="audiobooks/audiobook.mp3" type="audio/mpeg" />
+								</audio>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- YouTube Video Section -->
+				<section class="audiovisuals-section">
+					<div class="row">
+						<div class="column xl-12">
+							<div style="text-align: center; margin-bottom: 4rem">
+								<h2>Video</h2>
+								<p style="font-size: 1.6rem; color: #888; margin-top: 1rem">
+									Watch engaging visual storytelling
+								</p>
+							</div>
+
+							<div style="text-align: center; margin-bottom: 6rem">
+								<!-- Replace with your YouTube embed code -->
+								<div style="max-width: 100%; margin: 0 auto">
+									<iframe
+										width="100%"
+										height="600"
+										src="https://www.youtube.com/embed/YNzdrK2o04c"
+										title="YouTube video player"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										allowfullscreen
+										style="max-width: 800px; margin: 0 auto; display: block"
+									></iframe>
+								</div>
+								<p style="font-size: 1.4rem; color: #999; margin-top: 2rem"></p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+			<!-- end s-content -->
+
+			<!-- # cta
+        ================================================== -->
+			<div data-component="site-cta"></div>
+
+			<!-- # footer 
+        ================================================== -->
+			<div data-component="site-footer"></div>
+		</div>
+		<!-- end page-wrap -->
+
+		<!-- Java Script
+    ================================================== -->
+		<script src="js/components.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
